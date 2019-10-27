@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProjectGuid>{BF432252-CA1B-4CEF-84D2-A769C52EFD70}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="MainPage.html" />
+    <None Include="Styles_MainPage.css" />
+    <None Include="Img\SYNC.png" />
+    <None Include="Img\sph.png" />
+    <None Include="Fonts\SyncFont.TTF" />
+    <None Include="Img\SYNC_name.png" />
+    <None Include="Img\loop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Img\" />
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+</Project>

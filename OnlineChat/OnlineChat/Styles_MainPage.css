@@ -1,0 +1,122 @@
+﻿
+
+body {
+    margin: 0px;
+    background-color: #e3f0ff;
+}
+
+input{
+    outline:none;
+}
+.shit{
+    
+}
+
+
+.header_lp {
+    border-bottom: 50px solid #3c6c99;
+    width: 20%;
+
+    margin-left: 15%;
+    z-index: 1;
+}
+    .header_lp:hover {
+        border-bottom-color: #3d5d7a;
+    }
+    .header_name:hover .header_lp {
+        border-bottom-color: #3d5d7a;
+    }
+.header_rp {
+    border-bottom: 50px solid #3c6c99;
+    width: 50%;
+    margin-top:-50px;
+    margin-left: 35%;
+    z-index: 1;
+}
+    .header_rp:hover {
+        border-bottom-color: #3d5d7a;
+    }
+
+
+.header_img{
+    position: absolute;
+    top:5px;
+    left:80%;
+    height: 40px;
+    width: 40px;
+}
+
+.header_name {
+    position: absolute;
+    top:5px;
+    height:40px;
+    width:10%;
+    left: 20%;
+    font-size: 30px;
+}
+
+
+
+.friend_list {
+    height: 93.5%;
+    width: 20%;
+    background-color: #f5faff;
+    margin-left: 15%;
+}
+    .findField{
+
+    }
+
+        .findFieldLoop{
+            height: 3%;
+            width:6%;
+            margin-left:12%;
+            margin-top:-8%;
+            z-index:2;
+
+        }
+        .findYourFriendField {
+        background-color: white;
+        color: #930;
+        width: 80%;
+        height: 5%;
+        border-radius: 3px;
+        border: 1px solid #dbdbdb;
+        margin-left: 10%;
+        margin-top: 8%;
+        padding-left: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+            .findYourFriendField:focus {
+                background-color: #e0e0e0;
+                color: #930;
+                border: 1px solid #bababa;
+            }
+
+.chat_panel {
+    position: absolute;
+    height: 93.5%;
+    width: 50%;
+    background-color: #e4e8ed;
+    left: 35%;
+    top: 50px;
+}
+    .borderChat {
+
+        height: 100%;
+        width:2px;
+        background-color:grey;
+    }
+
+
+
+
+
+@font-face {
+    font-family: "SyncFont";
+    src: url("Fonts/SyncFont.TTF") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+} 
+
+
