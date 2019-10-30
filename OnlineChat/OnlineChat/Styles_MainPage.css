@@ -1,6 +1,4 @@
-﻿
-
-body {
+﻿body {
     margin: 0px;
     background-color: #e3f0ff;
 }
@@ -44,11 +42,24 @@ input{
 
 .header_name {
     position: absolute;
-    top:5px;
-    height:40px;
-    width:10%;
+    top: 10px;
+    height: 40px;
+    width: 10%;
     left: 20%;
     font-size: 30px;
+    font-family: SyncFont;
+    color: #f0f0f0;
+}
+
+.chat_name {
+    position: absolute;
+    top: 10px;
+    height: 40px;
+    width: 15%;
+    left: 40%;
+    font-size: 30px;
+    font-family:SyncFont;
+    color: #f0f0f0;
 }
 
 
