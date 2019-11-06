@@ -6,6 +6,9 @@
 input{
     outline:none;
 }
+button{
+    outline:none;
+}
 
 .header_lp {
     border-bottom: 50px solid #3c6c99;
@@ -91,7 +94,7 @@ input{
         border: 1px solid #dbdbdb;
         margin-left: 10%;
         margin-top: 8%;
-        padding-left: 25px;
+        padding-left: 10%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
             .findYourFriendField:focus {
@@ -104,7 +107,7 @@ input{
     position: absolute;
     height: 93.5%;
     width: 50%;
-    background-color: #e4e8ed;
+    background-color: #f5faff;
     left: 35%;
     top: 50px;
 }
@@ -115,9 +118,43 @@ input{
         background-color:grey;
     }
 
-
-
-
+.sendMessage {
+}
+.sendMessageInput {
+    position: absolute;
+    top: 75%;
+    height: 15%;
+    width: 70%;
+    left: 5%;
+    border: none;
+    border-bottom: 2px solid gray;
+    padding-left: 1%;
+    padding-top: -5px; 
+    font-family: Verdana;
+    color: gray;
+    /*background: none;*/
+}
+.sendMessageInput:focus {
+    color: black;
+    border-bottom: 2px solid black;
+}
+.send {
+    position: absolute;
+    top: 82.5%;
+    background-color: #3c6c99;
+    border: 1px solid black;
+    padding: 5px;
+    left: 80%;
+    border-radius: 3px;
+    font-family: Verdana;
+    color: #f0f0f0;
+    width: 15%;
+    height: 7%;
+}
+.send:hover {
+    background-color: #3d5d7a;
+    cursor: pointer;
+}
 
 @font-face {
     font-family: "SyncFont";
