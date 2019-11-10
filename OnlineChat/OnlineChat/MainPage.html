@@ -3,7 +3,35 @@
 <head>
     <link rel="stylesheet" type="text/css" href="Styles_MainPage.css" />
     <link rel="shortcut icon" type="image/png" href="Img/SYNC.png" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script> 
     <meta charset="utf-8" />
+
+    <script>
+        $(document).ready (function(){
+        $("#done").bind("click",function(){
+            var xhr = $.ajax({
+                url: "index.php", 
+                type: "POST",           
+                data: ({message: $("#yourMessage").val() }), 
+                dataType: "html",   
+                beforeSend: function () {                               
+                                var str = document.getElementById("yourMessage");                               
+                                if (str.value.length===0)||(str.value.length>30) {
+                                    alert("fail");
+                                    xhr.abort();
+                                }
+                                    
+                            },               
+                success: function(data){
+                    alert ("success");
+                }
+
+            });
+        });
+    });
+    </script>
+
+
     <title>SyncChat</title>
 </head>
 
@@ -38,13 +66,18 @@
 
             </div>
             <div class="chat_panel">
+            	<div class="messageField">
+            		
+            	</div>
                 <div class="borderChat">
                     
                 </div> 
+                <form>
                 <div class="sendMessage">
-                    <input type="text" class="sendMessageInput" placeholder="Sync your message">
+                    <input type="text" class="sendMessageInput" placeholder="Sync your message" id="yourMessage" >
                 </div>
-                <button class="send">Send a message</button>
+                <input class="send" type="button" id="done" >Send a message</button>
+            </form>
             </div>
 
         </article>
