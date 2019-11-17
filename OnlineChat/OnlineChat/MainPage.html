@@ -2,83 +2,83 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="Styles_MainPage.css" />
+    <link rel="stylesheet" type="text/css" href="UI.css" />
     <link rel="shortcut icon" type="image/png" href="Img/SYNC.png" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script> 
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="validation.js"></script>
     <meta charset="utf-8" />
-
-    <script>
-        $(document).ready (function(){
-        $("#done").bind("click",function(){
-            var xhr = $.ajax({
-                url: "index.php", 
-                type: "POST",           
-                data: ({message: $("#yourMessage").val() }), 
-                dataType: "html",   
-                beforeSend: function () {                               
-                                var str = document.getElementById("yourMessage");                               
-                                if (str.value.length===0)||(str.value.length>30) {
-                                    alert("fail");
-                                    xhr.abort();
-                                }
-                                    
-                            },               
-                success: function(data){
-                    alert ("success");
-                }
-
-            });
-        });
-    });
-    </script>
-
 
     <title>SyncChat</title>
 </head>
 
 
 
-<body>
+<body onload="OnClickSigningIn(), ChangeTheme()">
         <header>
-            <div class="header_lp">
-
-                <!--<img class="header_name" src="Img/SYNC_name.png" />-->
-                <div class="header_name" >Sync Chat</div>
-
+            <div class="header_lp" id="header_lp">
+                <div class="header_name" id="header_nameId">Sync Chat</div>
             </div>
 
-            <div class="header_rp">
-                <img class="header_img" src="Img/sph.png" />
-                <div class="chat_name">Friend's name</div>
+            <div class="header_rp" id="header_rp">
+                <label><input type="checkbox" id="rightLogoid" onchange="ChangeTheme()"><img class="header_img" id="rightLogo" src="Img/sph.png"  /></label>
+                <div class="chat_name" id="chat_nameId">Friend's name</div>
             </div>
 
             <h1 class="header_name"></h1>
         </header>
 
         <article>
-            <div class="friend_list">
+            <div class="friend_list" id="friend_list">
                 <div class="findField">
-
                     <input type="text" class="findYourFriendField" placeholder="Synchronize"/  >
                     <img class="findFieldLoop" src="Img/loop.png" />
-
-
                 </div>
 
+                   <div class="category-wrap" id="myButtons">
+                        <button onclick="OnClickRegistration()">Registration</button></br></br>
+                        <button onclick="OnClickSigningIn()">Sign In</button></br></br>
+                        <button onclick="OnClickChat()">Chat</button></br></br>
+                    </div>
+
             </div>
-            <div class="chat_panel">
-            	<div class="messageField">
-            		
-            	</div>
-                <div class="borderChat">
+            <div class="chat_panel" id="chat_panel">
+                
+                <center><div class="registrationField stretchRight" id="registrationField">
+                    <h1 class="registration" id="registration">REGISTRATION</h1>
+                    <form>
+                    <input class="Belyash" type="text" placeholder="Login" id="loginReg" required pattern="[A-Za-zА-Яа-яЁё]+$"></br></br>
+
+                    <input class="Belyash" type="password" placeholder="Password" id="passInput"required></br></br>
+                    	<label><input type="checkbox" class="checkboxSharingan1 sharingan" id="sharingan" name="" onchange="ChangeSharingan()">
+                    		<img src="Img/sharinganoff.png" class="sharImg" id="sharImg1"></label>
+
+                    <input type="file";  accept="image/jpeg; image/png; image/jpg"></br></br>
+
+                    <button class="submitButton" id="submitBtn1">Submit</button>
+                    </form>
+                </div></center>
+                <center><div class="signInField stretchRight" id="signInField">
+                    <h1 class="registration" id="registration2">LOGIN</h1>
+                    <form>
+                    <input class="Belyash" type="text" placeholder="Login"></br></br>
+                    <input class="Belyash" type="password" placeholder="Password"></br></br>
+                    <button class="submitButton" id="submitBtn2">Sing in</button>
+                    </form>
+                </div></center>
+                <div class="messageField stretchRight" id="messageField">
                     
-                </div> 
-                <form>
-                <div class="sendMessage">
-                    <input type="text" class="sendMessageInput" placeholder="Sync your message" id="yourMessage" >
                 </div>
-                <input class="send" type="button" id="done" >Send a message</button>
-            </form>
-            </div>
+
+                <div class="borderChat stretchRight" id="borderChat">                    
+                </div> 
+	                <form  action="index.php" method="post" id="chatSending" >
+		                <div class="sendMessage " >
+		                    <input type="text" class="sendMessageInput" placeholder="Sync your message" id="yourMessage">
+		                </div>
+		                	<input class="send" type="button" id="done" value="Send a message" >
+	            	</form>
+        		</div>
 
         </article>
     <footer>

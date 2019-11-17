@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{BF432252-CA1B-4CEF-84D2-A769C52EFD70}|Default">
+  <MonoDevelop.Ide.ItemProperties.OnlineChat PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="OnlineChat/Styles_MainPage.css">
+    <Files>
+      <File FileName="OnlineChat/Styles_MainPage.css" Line="61" Column="15" />
+      <File FileName="OnlineChat/index.php" Line="1" Column="1" />
+      <File FileName="OnlineChat/script.js" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OnlineChat" expanded="True">
+            <Node name="OnlineChat" expanded="True">
+              <Node name="Styles_MainPage.css" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

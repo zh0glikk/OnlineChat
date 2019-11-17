@@ -10,13 +10,15 @@
     <OutputPath>.\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="MainPage.html" />
     <None Include="Styles_MainPage.css" />
     <None Include="Img\SYNC.png" />
     <None Include="Img\sph.png" />
     <None Include="Fonts\SyncFont.TTF" />
     <None Include="Img\SYNC_name.png" />
     <None Include="Img\loop.png" />
+    <None Include="index.php" />
+    <None Include="MainPage.php" />
+    <None Include="script.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Img\" />

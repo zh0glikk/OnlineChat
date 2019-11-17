@@ -1,0 +1,44 @@
+.checkboxSharingan1{
+	position: absolute;
+	left: 66%;
+	top:43.5%;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.checkboxSharingan2{
+	position: absolute;
+	left: 66%;
+	top:56%;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.sharingan + img {
+	cursor: pointer;
+}
+
+.sharImg{
+	position: absolute;
+	left: 64.5%;
+	top:42%;
+	width: 27px;
+
+}
+
+
+#rightLogoid{
+	position: absolute;
+	left: 66%;
+	top:43.5%;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+#rightLogoid + img {
+	cursor: pointer;
+}
+
+
