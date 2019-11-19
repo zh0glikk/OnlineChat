@@ -31,13 +31,13 @@
         <article>
             <div class="friend_list" id="friend_list">
                 <div class="findField">
-                    <input type="text" class="findYourFriendField" placeholder="Synchronize"/  >
+                    <input type="text" id="synchronizeField" class="findYourFriendField" placeholder="Synchronize"/  >
                     <img class="findFieldLoop" src="Img/loop.png" />
                 </div>
 
                    <div class="category-wrap" id="myButtons">
                         <button onclick="OnClickRegistration()">Registration</button></br></br>
-                        <button onclick="OnClickSigningIn()">Sign In</button></br></br>
+                        <button onclick="OnClickSigningIn()" id="signInBtn">Sign In</button></br></br>
                         <button onclick="OnClickChat()">Chat</button></br></br>
                     </div>
 
@@ -47,22 +47,24 @@
                 <center><div class="registrationField stretchRight" id="registrationField">
                     <h1 class="registration" id="registration">REGISTRATION</h1>
                     <form>
-                    <input class="Belyash" type="text" placeholder="Login" id="loginReg" required pattern="[A-Za-zА-Яа-яЁё]+$"></br></br>
+	                    <input class="Belyash" type="text" placeholder="Login" id="loginReg" name="login" required pattern="[A-Za-zА-Яа-яЁё]+$"></br></br>
 
-                    <input class="Belyash" type="password" placeholder="Password" id="passInput"required></br></br>
-                    	<label><input type="checkbox" class="checkboxSharingan1 sharingan" id="sharingan" name="" onchange="ChangeSharingan()">
-                    		<img src="Img/sharinganoff.png" class="sharImg" id="sharImg1"></label>
+	                    <input class="Belyash" type="password" placeholder="Password" id="passInput" name="password" required></br></br>
+	                    	<label><input type="checkbox" class="checkboxSharingan1 sharingan" id="sharingan" name="" onchange="ChangeSharingan()">
+	                    		<img src="Img/sharinganoff.png" class="sharImg" id="sharImg1"></label>
 
-                    <input type="file";  accept="image/jpeg; image/png; image/jpg"></br></br>
+	                    <label><input type="file";  accept="image/jpeg; image/png; image/jpg" id="fileId" class="fileId">
+	                    	<img src="Img/camera.png" class="fileImg" id="fileImg"><div class="chooseText">CHOOSE PHOTO</div></label>
+	                </br></br>
 
-                    <button class="submitButton" id="submitBtn1">Submit</button>
+	                    <button class="submitButton" id="submitBtn1" >Submit</button>
                     </form>
                 </div></center>
                 <center><div class="signInField stretchRight" id="signInField">
                     <h1 class="registration" id="registration2">LOGIN</h1>
                     <form>
-                    <input class="Belyash" type="text" placeholder="Login"></br></br>
-                    <input class="Belyash" type="password" placeholder="Password"></br></br>
+                    <input class="Belyash" id="loginInp" type="text" placeholder="Login"></br></br>
+                    <input class="Belyash" type="password" id="passInp" placeholder="Password"></br></br>
                     <button class="submitButton" id="submitBtn2">Sing in</button>
                     </form>
                 </div></center>

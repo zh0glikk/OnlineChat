@@ -7,6 +7,7 @@
 body{
     margin: 0px;
     background-color: #e3f0ff;
+    transition: .5s linear;
 }
 input{
     outline:none;
@@ -133,7 +134,7 @@ button{
         }
         .findYourFriendField {
         background-color: white;
-        color: #930;
+        color: black;
         width: 80%;
         height: 5%;
         border-radius: 3px;
@@ -142,11 +143,26 @@ button{
         margin-top: 8%;
         padding-left: 10%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        transition: .5s linear;
     }
             .findYourFriendField:focus {
-                background-color: #e0e0e0;
-                color: #930;
-                border: 1px solid #bababa;
+                border: 1px solid black;
+            }
+        .findYourFriendField2 {
+        background-color: black;
+        color: white;
+        width: 80%;
+        height: 5%;
+        border-radius: 3px;
+        border: 1px solid #dbdbdb;
+        margin-left: 10%;
+        margin-top: 8%;
+        padding-left: 10%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        transition: .5s linear;
+    }    
+    .findYourFriendField2:focus {
+               border: 1px solid red;
             }
 .friend_list2 {
     height: 93.5%;
@@ -195,11 +211,35 @@ button{
     font-family: Verdana;
     color: gray;
     background: none;
+    transition: .3s linear;
 }
 .sendMessageInput:focus {
     color: black;
     border-bottom: 2px solid black;
+    transition: .3s linear;
 }
+
+.sendMessageInput2 {
+    position: absolute;
+    top: 75%;
+    height: 15%;
+    width: 70%;
+    left: 5%;
+    border: none;
+    border-bottom: 2px solid black;
+    padding-left: 1%;
+    padding-top: -5px; 
+    font-family: Verdana;
+    color: white;
+    background: none;
+    transition: .3s linear;
+}
+.sendMessageInput2:focus {
+    color: white;
+    border-bottom: 2px solid white;
+    transition: .3s linear;
+}
+
 .send {
     position: absolute;
     top: 82.5%;
@@ -213,10 +253,33 @@ button{
     color: #f0f0f0;
     width: 15%;
     height: 7%;
+    transition: .3s linear;
     }
 .send:hover {
     background-color: #3d5d7a;
     cursor: pointer;
+    transition: .3s linear;
+}
+
+.send2 {
+    position: absolute;
+    top: 82.5%;
+    background-color:#8e1010 ;
+    border: 1px solid black;
+    padding: 5px;
+    left: 80%;
+    border-radius: 3px;
+    font-family: Verdana;
+    font-size: 10px;
+    color: black;
+    width: 15%;
+    height: 7%;
+    transition: .3s linear;
+    }
+.send2:hover {
+    background-color: #590b0b;
+    cursor: pointer;
+    transition: .3s linear;
 }
 
 #chatSending{
@@ -246,14 +309,32 @@ button{
     height: 8%;
     padding-left: 3%;
     background-color: white;
-    color: #930;
+    color: black;
     border-radius: 3px;
     border: 1px solid #dbdbdb;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: .5s linear;
 
 }
 .Belyash:focus{
     border: 1px solid black;
+}
+
+.Belyash2{  /* input registration; SDELANO V CHEST REBORNING BELYASHA */
+    font-family: Verdana;
+    width: 40%;
+    height: 8%;
+    padding-left: 3%;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: .5s linear;
+
+}
+.Belyash2:focus{
+    border: 1px solid red;
 }
 
 .registration{
@@ -296,7 +377,7 @@ button{
     font-weight: 600;
     font-size: 20;
     color: black;
-    background-color: #ff6e61;
+    background-color: #c93741;
  /*   border: none;*/
     transition: .3s linear;
     border-radius: 3px;
@@ -304,7 +385,7 @@ button{
 }
 
 .submitButton2:hover{
-    background: #ba4d43;
+    background: #911821;
   transition: .3s linear;
   border:2px solid black;
 }
@@ -361,13 +442,13 @@ button{
     font-weight: 600;
     font-size: 20;
     color: black;
-    background-color: #ff6e61;
+    background-color: #c93741;
     border: none;
     transition: .5s linear;
 }
 
 .category-wrap2 button:hover {
-  background: #ba4d43;
+  background: #911821;
   transition: .5s linear;
   border:1px solid black; 
 }
@@ -451,3 +532,6 @@ button{
         -webkit-transform: scaleX(1);
     }       
 }
+
+
+

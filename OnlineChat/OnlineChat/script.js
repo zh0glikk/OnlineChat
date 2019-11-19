@@ -20,6 +20,8 @@ function OnClickChat() {
     document.getElementById('chatSending').style.display='block';
 }
 
+
+
 function ChangeSharingan() {
 	var checkbox;
 
@@ -58,6 +60,13 @@ function ChangeTheme() {
 		document.getElementById("registration2").className="registration2";
 		document.getElementById("submitBtn1").className="submitButton2";
 		document.getElementById("submitBtn2").className="submitButton2";
+		document.getElementById("loginReg").className="Belyash2";
+		document.getElementById("passInput").className="Belyash2";
+		document.getElementById("loginInp").className="Belyash2";
+		document.getElementById("passInp").className="Belyash2";
+		document.getElementById("done").className="send2";
+		document.getElementById("synchronizeField").className="findYourFriendField2";
+		document.getElementById("yourMessage").className="sendMessageInput2";
 
 		 
 
@@ -77,7 +86,13 @@ function ChangeTheme() {
 		document.getElementById("registration2").className="registration";
 		document.getElementById("submitBtn1").className="submitButton";
 		document.getElementById("submitBtn2").className="submitButton";
-		
+		document.getElementById("loginReg").className="Belyash";
+		document.getElementById("passInput").className="Belyash";
+		document.getElementById("loginInp").className="Belyash";
+		document.getElementById("passInp").className="Belyash";	
+		document.getElementById("done").className="send";	
+		document.getElementById("synchronizeField").className="findYourFriendField";
+		document.getElementById("yourMessage").className="sendMessageInput";
 	}
 }
 

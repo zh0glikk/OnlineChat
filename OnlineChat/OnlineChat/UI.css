@@ -27,6 +27,30 @@
 
 }
 
+.fileId{
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.fileId + img {
+	cursor: pointer;
+}
+
+.fileImg{
+	width: 30%;
+
+}
+
+
+.chooseText{
+	position: absolute;
+	font-family: CrazyFont;
+	left:40.5%;
+	top:90%;
+	font-weight: 800;
+}
+
 
 #rightLogoid{
 	position: absolute;
@@ -39,6 +63,10 @@
 
 #rightLogoid + img {
 	cursor: pointer;
+}
+
+.fileId{
+
 }
 
 
