@@ -13,6 +13,32 @@
 </head>
 
 
+<script type="text/javascript">
+    $(document).ready (function(){
+        $("#submitBtn1").bind("click",function(){
+            var xhr = $.ajax({
+                url: "registration.php", 
+                type: "POST",           
+                data: ({username: $("#loginReg").val(), password: $("#passInput").val() }), 
+                dataType: "html",   
+                beforeSend: function () {
+                                alert("_");
+                            },               
+                success: function(data){
+                    alert("+"); 
+                                   },
+                complete: function(data){
+                    $("#loginReg").val("");
+                    $("#passInput").val("");
+                    OnClickSigningIn();
+                }
+
+            });
+        });
+    });
+</script>
+
+
 
 <body onload="OnClickSigningIn(), ChangeTheme()">
         <header>
@@ -46,7 +72,7 @@
                 
                 <center><div class="registrationField stretchRight" id="registrationField">
                     <h1 class="registration" id="registration">REGISTRATION</h1>
-                    <form>
+                    <!-- <form> -->
 	                    <input class="Belyash" type="text" placeholder="Login" id="loginReg" name="login" required pattern="[A-Za-zА-Яа-яЁё]+$"></br></br>
 
 	                    <input class="Belyash" type="password" placeholder="Password" id="passInput" name="password" required></br></br>
@@ -58,7 +84,7 @@
 	                </br></br>
 
 	                    <button class="submitButton" id="submitBtn1" >Submit</button>
-                    </form>
+                    <!-- </form> -->
                 </div></center>
                 <center><div class="signInField stretchRight" id="signInField">
                     <h1 class="registration" id="registration2">LOGIN</h1>
