@@ -22,10 +22,29 @@
                 data: ({username: $("#loginReg").val(), password: $("#passInput").val() }), 
                 dataType: "html",   
                 beforeSend: function () {
-                                alert("_");
+                                var estr = document.getElementById("loginReg");
+                                var est = document.getElementById("passInput");
+                                var e = new RegExp("[0-9A-Za-z]");
+                                var t = e.test(estr);
+
+                                if (!e.test(estr.value) && (estr.value.length!=0)) {
+                                    alert("Wrong login");
+                                    xhr.abort();
+                                }
+                                else    {
+                                    if (!e.test(est.value) && (est.value.length!=0)) {
+                                        alert("Wrong password");
+                                        xhr.abort();
+                                    }
+                                    else{
+                                        alert("You've registered!"); 
+                                    }
+
+                                }    
+                                    
                             },               
                 success: function(data){
-                    alert("+"); 
+                    
                                    },
                 complete: function(data){
                     $("#loginReg").val("");
