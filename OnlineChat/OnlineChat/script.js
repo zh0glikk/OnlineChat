@@ -99,6 +99,26 @@ function ChangeTheme() {
 
 
 
+function ChangeBtn(){
+	document.getElementById("logOutBtn").style.display='block';
+	document.getElementById("signInBtn").style.display='none';
+}
+
+function ChangeBtn2(){
+	document.getElementById("logOutBtn").style.display='none';
+	document.getElementById("signInBtn").style.display='block';
+}
+
+
+function HideBtn(){
+	document.getElementById("chatBtn").style.display='block';
+
+}
+
+function HideBtn2(){
+	document.getElementById("chatBtn").style.display='none';
+
+}
 
 
 

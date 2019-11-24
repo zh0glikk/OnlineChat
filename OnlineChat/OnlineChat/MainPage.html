@@ -55,11 +55,61 @@
             });
         });
     });
+
+
+
+    $(document).ready (function(){
+        $("#submitBtn2").bind("click",function(){
+            var xhr = $.ajax({
+                url: "login.php", 
+                type: "POST",           
+                data: ({username: $("#loginInp").val(), password: $("#passInp").val() }), 
+                dataType: "html",   
+                beforeSend: function () {
+                                alert("beforeSend");
+                            },               
+                success: function(data){
+                                alert("success");
+                                   },
+                complete: function(data){
+                    $("#loginInp").val("");
+                    $("#passInp").val("");
+                    HideBtn();
+                    OnClickChat();
+                }
+
+            });
+        });
+    });
+
+    $(document).ready (function(){
+        $("#logOutBtn").bind("click",function(){
+            var xhr = $.ajax({
+                url: "logout.php", 
+                type: "POST",           
+                dataType: "html",   
+                beforeSend: function () {
+                                alert("beforeSend");
+                            },               
+                success: function(){
+                                alert("LOGGED OUT");
+                                document.getElementById("chat_nameId").textContent='';
+                                   },
+                complete: function(data){
+                    OnClickSigningIn();
+                    HideBtn2();
+                }
+
+            });
+        });
+    });
+
+
 </script>
 
 
 
-<body onload="OnClickSigningIn(), ChangeTheme()">
+<body onload="OnClickSigningIn(), ChangeTheme(), HideBtn2()">
         <header>
             <div class="header_lp" id="header_lp">
                 <div class="header_name" id="header_nameId">Sync Chat</div>
@@ -67,7 +117,7 @@
 
             <div class="header_rp" id="header_rp">
                 <label><input type="checkbox" id="rightLogoid" onchange="ChangeTheme()"><img class="header_img" id="rightLogo" src="Img/sph.png"  /></label>
-                <div class="chat_name" id="chat_nameId">Friend's name</div>
+                <div class="chat_name" id="chat_nameId"></div>
             </div>
 
             <h1 class="header_name"></h1>
@@ -81,9 +131,10 @@
                 </div>
 
                    <div class="category-wrap" id="myButtons">
-                        <button onclick="OnClickRegistration()">Registration</button></br></br>
-                        <button onclick="OnClickSigningIn()" id="signInBtn">Sign In</button></br></br>
-                        <button onclick="OnClickChat()">Chat</button></br></br>
+                        <button onclick="OnClickRegistration()">Registration</button>
+                        <button onclick="OnClickSigningIn(),ChangeBtn()" id="signInBtn">Sign In</button>
+                        <button onclick="ChangeBtn2()" id="logOutBtn">Log Out</button>
+                        <button onclick="OnClickChat()" id="chatBtn">Chat</button>
                     </div>
 
             </div>
@@ -107,11 +158,11 @@
                 </div></center>
                 <center><div class="signInField stretchRight" id="signInField">
                     <h1 class="registration" id="registration2">LOGIN</h1>
-                    <form>
+                  <!--   <form> -->
                     <input class="Belyash" id="loginInp" type="text" placeholder="Login"></br></br>
                     <input class="Belyash" type="password" id="passInp" placeholder="Password"></br></br>
                     <button class="submitButton" id="submitBtn2">Sing in</button>
-                    </form>
+                 <!--    </form> -->
                 </div></center>
                 <div class="messageField stretchRight" id="messageField">
                     
