@@ -1,31 +1,26 @@
 <?php 
 
-$dbServername = "localhost";
-	$dbUsername = "root";
-	$dbPassword = "root";
-	$dbName = "students"; 
+	include 'connection.php';
 
-	$conn = new mysqli($dbServername,$dbUsername,$dbPassword,$dbName); 
+	$username=$_POST['username'];
+	$password=$_POST['password'];
 
 
-		$username=$_POST['username'];
-		$password=$_POST['password'];
+	$query = "SELECT * FROM  sync  WHERE username='$username'";
+	$result=$conn->query($query);
+	$count=mysqli_num_rows($result);
 
-		// $sql_select="SELECT username FROM `sync` WHERE username=$username";
-		// $result=$conn->query($sql_select);
-
-			$sql = "INSERT INTO sync (username,password) VALUES ('$username','$password')";
-			$conn->query($sql);
+	if($count==1){
+		echo "Choose other login";
+	}
+	else{
+		$sql = "INSERT INTO sync (username,password) VALUES ('$username','$password')";
+		$conn->query($sql);
+		echo "You've registered";
+	}
 	
 
-		  
-
-		
-		
 
 	
-
-	
-
 
 ?>

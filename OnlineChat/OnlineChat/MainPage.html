@@ -36,20 +36,19 @@
                                         alert("Wrong password");
                                         xhr.abort();
                                     }
-                                    else{
-                                        alert("You've registered!"); 
-                                    }
 
                                 }    
                                     
                             },               
                 success: function(data){
-                    
+                        alert(data);
+                        if(data==="You've registered")
+                            OnClickSigningIn();
                                    },
                 complete: function(data){
                     $("#loginReg").val("");
                     $("#passInput").val("");
-                    OnClickSigningIn();
+                    
                 }
 
             });
@@ -66,16 +65,26 @@
                 data: ({username: $("#loginInp").val(), password: $("#passInp").val() }), 
                 dataType: "html",   
                 beforeSend: function () {
-                                alert("beforeSend");
+                                
                             },               
-                success: function(data){
-                                alert("success");
+                success: function(data){    
+                    if(data==="Fail")
+                              alert("Wrong login or password!");  
+                    else
+                    {
+                                alert("Hello");
+                                document.getElementById("chat_nameId").textContent=data;
+                                ChangeBtn();
+                                HideBtn();
+                                OnClickChat();
+
+                    }
+                                
                                    },
                 complete: function(data){
                     $("#loginInp").val("");
                     $("#passInp").val("");
-                    HideBtn();
-                    OnClickChat();
+                    
                 }
 
             });
@@ -89,15 +98,16 @@
                 type: "POST",           
                 dataType: "html",   
                 beforeSend: function () {
-                                alert("beforeSend");
+                            
                             },               
                 success: function(){
                                 alert("LOGGED OUT");
                                 document.getElementById("chat_nameId").textContent='';
+                                OnClickSigningIn();
+                                HideBtn2();
                                    },
                 complete: function(data){
-                    OnClickSigningIn();
-                    HideBtn2();
+                    
                 }
 
             });
@@ -132,7 +142,7 @@
 
                    <div class="category-wrap" id="myButtons">
                         <button onclick="OnClickRegistration()">Registration</button>
-                        <button onclick="OnClickSigningIn(),ChangeBtn()" id="signInBtn">Sign In</button>
+                        <button onclick="OnClickSigningIn()" id="signInBtn">Sign In</button>
                         <button onclick="ChangeBtn2()" id="logOutBtn">Log Out</button>
                         <button onclick="OnClickChat()" id="chatBtn">Chat</button>
                     </div>

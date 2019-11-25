@@ -12,19 +12,18 @@
 
 	$query = "SELECT * FROM  sync  WHERE username='$username' and password='$password'";
 	$result=$conn->query($query);
-	$count=mysql_num_rows($result);
+	$count=mysqli_num_rows($result);
 
 	if($count == 1)
 	{
 		$_SESSION['username']=$username;
+		echo $username;
+	}
+	else{
+		echo "Fail";
 	}
 
 
-
-	if(isset($_SESSION['username'])){
-		$username=$_SESSION['username'];
-		
-	}
 
 
 ?>
