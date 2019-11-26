@@ -23,6 +23,7 @@
 	position: absolute;
 	left: 64.5%;
 	top:42%;
+	-webkit-top:30%;
 	width: 27px;
 
 }

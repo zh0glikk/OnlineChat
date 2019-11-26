@@ -7,6 +7,10 @@
 
 	$username=$_POST['username'];
 	$password=$_POST['password'];
+	$isOnline=$_POST['online'];
+
+
+
 
 
 
@@ -17,6 +21,8 @@
 	if($count == 1)
 	{
 		$_SESSION['username']=$username;
+		$sql_Online="UPDATE sync SET active='$isOnline' WHERE username='$username'";
+		$conn->query($sql_Online);
 		echo $username;
 	}
 	else{

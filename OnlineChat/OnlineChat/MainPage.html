@@ -14,6 +14,8 @@
 
 
 <script type="text/javascript">
+
+
     $(document).ready (function(){
         $("#submitBtn1").bind("click",function(){
             var xhr = $.ajax({
@@ -59,10 +61,11 @@
 
     $(document).ready (function(){
         $("#submitBtn2").bind("click",function(){
+            var online = "online"
             var xhr = $.ajax({
                 url: "login.php", 
                 type: "POST",           
-                data: ({username: $("#loginInp").val(), password: $("#passInp").val() }), 
+                data: ({username: $("#loginInp").val(), password: $("#passInp").val(), online: online }), 
                 dataType: "html",   
                 beforeSend: function () {
                                 
@@ -93,26 +96,47 @@
 
     $(document).ready (function(){
         $("#logOutBtn").bind("click",function(){
+            var userName = document.getElementById("chat_nameId").textContent;
+            var online= "offline";
             var xhr = $.ajax({
                 url: "logout.php", 
-                type: "POST",           
+                type: "POST",         
+                data: ({online: online, userName: userName }),  
                 dataType: "html",   
                 beforeSend: function () {
                             
                             },               
-                success: function(){
+                success: function(data){
                                 alert("LOGGED OUT");
+                                alert(data);
                                 document.getElementById("chat_nameId").textContent='';
                                 OnClickSigningIn();
                                 HideBtn2();
-                                   },
-                complete: function(data){
-                    
-                }
-
+                                   }
             });
         });
     });
+
+
+    $(document).ready (function(){
+        $("#done").bind("click",function(){
+            var userName = document.getElementById("chat_nameId").textContent;
+            var xhr = $.ajax({
+                url: "message.php", 
+                type: "POST",  
+                data: ({message: $("#yourMessage").val(), userName: userName}),         
+                dataType: "html",   
+                beforeSend: function () {
+                        
+                            },               
+                success: function(data){
+                            $("#yourMessage").val("");
+                            alert(data);
+                                   }
+            });
+        });
+    });
+
 
 
 </script>
@@ -159,9 +183,9 @@
 	                    	<label><input type="checkbox" class="checkboxSharingan1 sharingan" id="sharingan" name="" onchange="ChangeSharingan()">
 	                    		<img src="Img/sharinganoff.png" class="sharImg" id="sharImg1"></label>
 
-	                    <label><input type="file";  accept="image/jpeg; image/png; image/jpg" id="fileId" class="fileId">
+	                   <!--  <label><input type="file";  accept="image/jpeg; image/png; image/jpg" id="fileId" class="fileId">
 	                    	<img src="Img/camera.png" class="fileImg" id="fileImg"><div class="chooseText">CHOOSE PHOTO</div></label>
-	                </br></br>
+	                </br></br> -->
 
 	                    <button class="submitButton" id="submitBtn1" >Submit</button>
                     <!-- </form> -->
@@ -179,13 +203,13 @@
                 </div>
 
                 <div class="borderChat stretchRight" id="borderChat">                    
-                </div> 
-	                <form  action="index.php" method="post" id="chatSending" >
+                
+	                <div id="chatSending" >
 		                <div class="sendMessage " >
 		                    <input type="text" class="sendMessageInput" placeholder="Sync your message" id="yourMessage">
 		                </div>
 		                	<input class="send" type="button" id="done" value="Send a message" >
-	            	</form>
+	            	</div>
         		</div>
 
         </article>
