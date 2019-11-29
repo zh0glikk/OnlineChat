@@ -155,10 +155,6 @@
 
         <article>
             <div class="friend_list" id="friend_list">
-              <!--   <div class="findField">
-                    <input type="text" id="synchronizeField" class="findYourFriendField" placeholder="Synchronize"/  >
-                    <img class="findFieldLoop" src="Img/loop.png" />
-                </div> -->
 
                    <div class="category-wrap" id="myButtons">
                         <button onclick="OnClickRegistration()">Registration</button>
@@ -172,7 +168,7 @@
 
                     <div class="onlineField" id="onlineField">
                         <center style="font-family: CrazyFont"><h1>ONLINE</h1></center>
-                         <? include_once(connection.php) ?>
+                            <? include_once(connection.php) ?>
                             <?  $sql_online_list="SELECT * FROM sync WHERE active='online'";
                                 $result=$conn->query("$sql_online_list");
                                 while($row = $result->fetch_array(MYSQLI_ASSOC);)
@@ -180,7 +176,7 @@
                                 <div style="width: 80%, margin-left:10%">
                                     <p><?=$row['username'] ?></p><br>
                                 </div>
-                            <? endwhile ?>   
+                            <? endwhile ?>    
                     </div>
 
             </div>

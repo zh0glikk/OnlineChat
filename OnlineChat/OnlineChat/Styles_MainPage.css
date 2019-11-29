@@ -119,51 +119,6 @@ button{
     .menuField{
 
     }   
-
-    /*.findField{
-
-    }
-
-        .findFieldLoop{
-            height: 3%;
-            width:6%;
-            margin-left:12%;
-            margin-top:-8%;
-            z-index:2;
-
-        }
-        .findYourFriendField {
-        background-color: white;
-        color: black;
-        width: 80%;
-        height: 5%;
-        border-radius: 3px;
-        border: 1px solid #dbdbdb;
-        margin-left: 10%;
-        margin-top: 8%;
-        padding-left: 10%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        transition: .5s linear;
-    }
-            .findYourFriendField:focus {
-                border: 1px solid black;
-            }
-        .findYourFriendField2 {
-        background-color: black;
-        color: white;
-        width: 80%;
-        height: 5%;
-        border-radius: 3px;
-        border: 1px solid #dbdbdb;
-        margin-left: 10%;
-        margin-top: 8%;
-        padding-left: 10%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        transition: .5s linear;
-    }    
-    .findYourFriendField2:focus {
-               border: 1px solid red;
-            }*/
 .friend_list2 {
     height: 93.5%;
     width: 20%;
