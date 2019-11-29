@@ -248,6 +248,11 @@ button{
     width: 90%;
     height: 70%;
     display: none;
+    /*background-color: grey;*/
+    border:2px solid grey;
+    color:black;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #registrationField{
@@ -420,7 +425,7 @@ button{
 .onlineField{
     width: 80%;
     height: 60%;
-    border: 2px solid black;
+    border: 2px solid grey;
     margin-left: 9.3%;
     margin-top: 10%;
     color:black;

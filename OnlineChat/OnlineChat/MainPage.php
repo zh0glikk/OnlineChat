@@ -167,16 +167,18 @@
 
 
                     <div class="onlineField" id="onlineField">
-                        <center style="font-family: CrazyFont"><h1>ONLINE</h1></center>
-                            <? include_once(connection.php) ?>
-                            <?  $sql_online_list="SELECT * FROM sync WHERE active='online'";
-                                $result=$conn->query("$sql_online_list");
-                                while($row = $result->fetch_array(MYSQLI_ASSOC);)
-                            ?>
-                                <div style="width: 80%, margin-left:10%">
-                                    <p><?=$row['username'] ?></p><br>
-                                </div>
-                            <? endwhile ?>    
+                        <center style="font-family: CrazyFont"><h1>USERS</h1></center>
+                        <?php
+                            include 'online.php';
+                            
+                            while($row = mysqli_fetch_assoc($result)) :
+                        ?>
+                        
+                        <div style="margin-left: 10%;font-family: fantasy;  ">
+                            <?=$row['username']?>                            
+                        </div>
+                       <?php endwhile ?>
+                            
                     </div>
 
             </div>
@@ -206,9 +208,23 @@
                     <button class="submitButton" id="submitBtn2">Sing in</button>
                  <!--    </form> -->
                 </div></center>
+
+                
                 <div class="messageField stretchRight" id="messageField">
-                    
+                    <?php
+                        include 'messageHistory.php';    
+                        while($row = mysqli_fetch_assoc($result)) : 
+                    ?>
+                        <div>
+                            <p></p>
+                                <tt><pre>   <?=$row['name']?></pre>
+                                    <pre>   <?=$row['message']?></pre>
+                                </tt>
+                            <hr>
+                        </div>
+                        <?php endwhile ?>
                 </div>
+                
 
                 <div class="borderChat stretchRight" id="borderChat">                    
                 
