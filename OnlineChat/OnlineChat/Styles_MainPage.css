@@ -120,7 +120,7 @@ button{
 
     }   
 
-    .findField{
+    /*.findField{
 
     }
 
@@ -163,7 +163,7 @@ button{
     }    
     .findYourFriendField2:focus {
                border: 1px solid red;
-            }
+            }*/
 .friend_list2 {
     height: 93.5%;
     width: 20%;
@@ -405,12 +405,12 @@ button{
     /*margin-top: 10%;*/
     margin-left: 10%;
     width: 80%;
-    height: 100%;
+    height: 25%;
 }
 
 .category-wrap button{
     width: 100%;
-    height: 5%;
+    height: 20%;
     font-family: SyncFont;
     font-weight: 600;
     font-size: 20;
@@ -433,12 +433,12 @@ button{
 /*    margin-top: 10%;*/
     margin-left: 10%;
     width: 80%;
-    height: 100%;
+    height: 25%;
 }
 
 .category-wrap2 button{
     width: 100%;
-    height: 5%;
+    height: 20%;
     font-family: SyncFont;
     font-weight: 600;
     font-size: 20;
@@ -459,6 +459,28 @@ button{
 
 #logOutBtn{
     display: none;
+}
+
+
+.onlineField{
+    width: 80%;
+    height: 60%;
+    border: 2px solid black;
+    margin-left: 9.3%;
+    margin-top: 10%;
+    color:black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.onlineField2{
+    width: 80%;
+    height: 60%;
+    border: 2px solid white;
+    margin-left: 9.3%;
+    margin-top: 10%;
+    color:white;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 

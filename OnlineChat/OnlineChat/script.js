@@ -65,8 +65,8 @@ function ChangeTheme() {
 		document.getElementById("loginInp").className="Belyash2";
 		document.getElementById("passInp").className="Belyash2";
 		document.getElementById("done").className="send2";
-		document.getElementById("synchronizeField").className="findYourFriendField2";
 		document.getElementById("yourMessage").className="sendMessageInput2";
+		document.getElementById("onlineField").className="onlineField2";
 
 		 
 
@@ -91,8 +91,8 @@ function ChangeTheme() {
 		document.getElementById("loginInp").className="Belyash";
 		document.getElementById("passInp").className="Belyash";	
 		document.getElementById("done").className="send";	
-		document.getElementById("synchronizeField").className="findYourFriendField";
 		document.getElementById("yourMessage").className="sendMessageInput";
+		document.getElementById("onlineField").className="onlineField";
 	}
 }
 
