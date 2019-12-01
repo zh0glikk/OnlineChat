@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html5>
+﻿<?php
+    session_start();
+?>
+
+<!DOCTYPE html5>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="Styles_MainPage.css" />
@@ -76,6 +80,7 @@
                                 ChangeBtn();
                                 HideBtn();
                                 OnClickChat();
+                                ScrollDown();
 
                     }
                                 
@@ -100,11 +105,9 @@
                 data: ({online: online, userName: userName }),  
                 dataType: "html",   
                 beforeSend: function () {
-                            
+                             
                             },               
                 success: function(data){
-                                alert("LOGGED OUT");
-                                alert(data);
                                 document.getElementById("chat_nameId").textContent='';
                                 OnClickSigningIn();
                                 HideBtn2();
@@ -123,15 +126,50 @@
                 data: ({message: $("#yourMessage").val(), userName: userName}),         
                 dataType: "html",   
                 beforeSend: function () {
-                        
+                            var estr = document.getElementById("yourMessage");
+                            if(estr.value.length<1)
+                                xhr.abort();
                             },               
                 success: function(data){
                             $("#yourMessage").val("");
-                            alert(data);
+                            $("#messageField").append(data);
+                            ScrollDown();
                                    }
             });
         });
     });
+
+
+function ScrollDown(){
+    document.getElementById("messageField").scrollTop = 9999;
+}
+
+function AmIOnline(){
+    var xhr = $.ajax({
+                url:"onlinecheck.php", 
+                type: "POST",          
+                dataType: "html",   
+                beforeSend: function () {
+                            
+                            },               
+                success: function(data){
+                            if(data!="fail")
+                            {
+                                document.getElementById("chat_nameId").textContent=data;
+                                ChangeBtn();
+                                HideBtn();
+                                OnClickChat();
+                                ScrollDown();
+                            }
+                                   }
+            });
+}
+
+
+
+
+
+
 
 
 
@@ -139,7 +177,7 @@
 </script>
 
 
-<body onload="OnClickSigningIn(), ChangeTheme(), HideBtn2()">
+<body onload="OnClickSigningIn(), ChangeTheme(), HideBtn2(),AmIOnline()">
         <header>
             <div class="header_lp" id="header_lp">
                 <div class="header_name" id="header_nameId">Sync Chat</div>
@@ -160,7 +198,7 @@
                         <button onclick="OnClickRegistration()">Registration</button>
                         <button onclick="OnClickSigningIn()" id="signInBtn">Sign In</button>
                         <button onclick="ChangeBtn2()" id="logOutBtn">Log Out</button>
-                        <button onclick="OnClickChat()" id="chatBtn">Chat</button>
+                        <button onclick="OnClickChat(),ScrollDown()" id="chatBtn">Chat</button>
                     </div>
 
 
@@ -193,40 +231,35 @@
 	                    	<label><input type="checkbox" class="checkboxSharingan1 sharingan" id="sharingan" name="" onchange="ChangeSharingan()">
 	                    		<img src="Img/sharinganoff.png" class="sharImg" id="sharImg1"></label>
 
-	                   <!--  <label><input type="file";  accept="image/jpeg; image/png; image/jpg" id="fileId" class="fileId">
-	                    	<img src="Img/camera.png" class="fileImg" id="fileImg"><div class="chooseText">CHOOSE PHOTO</div></label>
-	                </br></br> -->
-
 	                    <button class="submitButton" id="submitBtn1" >Submit</button>
-                    <!-- </form> -->
                 </div></center>
                 <center><div class="signInField stretchRight" id="signInField">
                     <h1 class="registration" id="registration2">LOGIN</h1>
-                  <!--   <form> -->
+
                     <input class="Belyash" id="loginInp" type="text" placeholder="Login"></br></br>
                     <input class="Belyash" type="password" id="passInp" placeholder="Password"></br></br>
                     <button class="submitButton" id="submitBtn2">Sing in</button>
-                 <!--    </form> -->
+
                 </div></center>
 
                 
-                <div class="messageField stretchRight" id="messageField">
+                <div class="messageField stretchRight " id="messageField">
                     <?php
                         include 'messageHistory.php';    
                         while($row = mysqli_fetch_assoc($result)) : 
-                    ?>
-                        <div>
-                            <p></p>
-                                <tt><pre>   <?=$row['name']?></pre>
-                                    <pre>   <?=$row['message']?></pre>
-                                </tt>
+                        ?>
+
+                            <div style="margin-left:5%" >
+                                <span style="color:#34b1eb"><?=$row['name']?></span>
+                                <p style="color:black"><?=$row['message']?></p>
+                            </div>
                             <hr>
-                        </div>
+
                         <?php endwhile ?>
                 </div>
                 
 
-                <div class="borderChat stretchRight" id="borderChat">                    
+                <div class="borderChat" id="borderChat">                    
                 
 	                <div id="chatSending" >
 		                <div class="sendMessage " >

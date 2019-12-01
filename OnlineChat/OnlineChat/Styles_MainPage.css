@@ -142,6 +142,7 @@ button{
         width:2px;
         background-color:grey;
     }
+
 .chat_panel2 {
     position: absolute;
     height: 93.5%;
@@ -241,7 +242,7 @@ button{
     display: none;
 }
 
-#messageField {
+.messageField {
     position: absolute;
     top: 3.5%;
     left: 5%;
@@ -250,10 +251,11 @@ button{
     display: none;
     /*background-color: grey;*/
     border:2px solid grey;
-    color:black;
     overflow-y: scroll;
     overflow-x: hidden;
+    transition: .3s linear;
 }
+
 
 #registrationField{
     position: absolute;
@@ -523,5 +525,30 @@ button{
     }       
 }
 
+.slide-left {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+            -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  100% {
+        -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
 
 

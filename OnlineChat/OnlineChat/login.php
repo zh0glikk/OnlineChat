@@ -8,6 +8,7 @@
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 	$isOnline=$_POST['online'];
+	$_SESSION['username'] = $username;
 
 
 
