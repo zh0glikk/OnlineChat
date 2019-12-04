@@ -28,7 +28,6 @@
                                 var est = document.getElementById("passInput");
                                 var e = new RegExp("[0-9A-Za-z]");
                                 var t = e.test(estr);
-
                                 if (!e.test(estr.value) && (estr.value.length!=0)) {
                                     alert("Wrong login");
                                     xhr.abort();
@@ -132,8 +131,8 @@
                             },               
                 success: function(data){
                             $("#yourMessage").val("");
-                            $("#messageField").append(data);
-                            ScrollDown();
+                            // $("#messageField").append(data);
+                            // ScrollDown();
                                    }
             });
         });
@@ -165,13 +164,23 @@ function AmIOnline(){
             });
 }
 
+function AddLastMsg(){
+    var xhr = $.ajax({
+                url:"lastMessage.php", 
+                type: "POST",          
+                dataType: "html",   
+                beforeSend: function () {
+                    // alert("qwe");
+                            },               
+                success: function(data){            
+                        $("#messageField").append(data);
+                        // alert(data);
+                        ScrollDown();
+                                   }
+            });    
+}
 
-
-
-
-
-
-
+setInterval(AddLastMsg,1000);
 
 
 </script>
@@ -244,6 +253,7 @@ function AmIOnline(){
 
                 
                 <div class="messageField stretchRight " id="messageField">
+
                     <?php
                         include 'messageHistory.php';    
                         while($row = mysqli_fetch_assoc($result)) : 
