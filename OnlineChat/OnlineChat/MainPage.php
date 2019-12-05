@@ -168,7 +168,23 @@ function AmIOnline(){
 
 
 
+function AddLastMsg(){
+    var xhr = $.ajax({
+                url:"lastMessage.php", 
+                type: "POST",          
+                dataType: "html",   
+                beforeSend: function () {
+                    // alert("qwe");
+                            },               
+                success: function(data){            
+                        $("#messageField").append(data);
+                        // alert(data);
+                        ScrollDown();
+                                   }
+            });    
+}
 
+setInterval(AddLastMsg,1000);
 
 
 
