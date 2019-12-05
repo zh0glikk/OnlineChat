@@ -67,6 +67,7 @@ function ChangeTheme() {
 		document.getElementById("done").className="send2";
 		document.getElementById("yourMessage").className="sendMessageInput2";
 		document.getElementById("onlineField").className="onlineField2";
+		document.getElementById("messageField").className="messageField2 stretchRight";
 
 		 
 
@@ -93,6 +94,7 @@ function ChangeTheme() {
 		document.getElementById("done").className="send";	
 		document.getElementById("yourMessage").className="sendMessageInput";
 		document.getElementById("onlineField").className="onlineField";
+		document.getElementById("messageField").className="messageField stretchRight";
 	}
 }
 
@@ -119,7 +121,4 @@ function HideBtn2(){
 	document.getElementById("chatBtn").style.display='none';
 
 }
-
-
-
 

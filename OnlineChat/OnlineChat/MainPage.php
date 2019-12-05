@@ -75,7 +75,7 @@
                               alert("Wrong login or password!");  
                     else
                     {
-                                alert("Hello");
+                                // alert("Hello");
                                 document.getElementById("chat_nameId").textContent=data;
                                 ChangeBtn();
                                 HideBtn();
@@ -141,7 +141,7 @@
 
 
 function ScrollDown(){
-    document.getElementById("messageField").scrollTop = 9999;
+    document.getElementById("messageField").scrollTop = document.getElementById("messageField").scrollHeight;
 }
 
 function AmIOnline(){
@@ -174,12 +174,13 @@ function AddLastMsg(){
                 type: "POST",          
                 dataType: "html",   
                 beforeSend: function () {
-                    // alert("qwe");
                             },               
-                success: function(data){            
-                        $("#messageField").append(data);
-                        // alert(data);
-                        ScrollDown();
+                success: function(data){           
+                        if(data!="Fail") 
+                        {
+                            $("#messageField").append(data);
+                            ScrollDown();
+                        }
                                    }
             });    
 }
@@ -187,6 +188,20 @@ function AddLastMsg(){
 setInterval(AddLastMsg,1000);
 
 
+function SendComment(e) {
+    e = e || window.event;
+    if (e.keyCode == 13) {
+        document.getElementById("done").click();
+    };
+};
+
+function SignInEnter(e) {
+    e = e || window.event;
+    if (e.keyCode == 13) {
+        // document.getElementById("done").click();
+        document.getElementById("submitBtn2").click();
+    };
+};
 
 
 
@@ -228,7 +243,7 @@ setInterval(AddLastMsg,1000);
                             while($row = mysqli_fetch_assoc($result)) :
                         ?>
                         
-                        <div style="margin-left: 10%;font-family: fantasy;  ">
+                        <div style="margin-left: 10%;font-family: Verdana;  ">
                             <?=$row['username']?>                            
                         </div>
                        <?php endwhile ?>
@@ -253,7 +268,7 @@ setInterval(AddLastMsg,1000);
                     <h1 class="registration" id="registration2">LOGIN</h1>
 
                     <input class="Belyash" id="loginInp" type="text" placeholder="Login"></br></br>
-                    <input class="Belyash" type="password" id="passInp" placeholder="Password"></br></br>
+                    <input class="Belyash" type="password" id="passInp" placeholder="Password" onkeydown="SignInEnter(event)"></br></br>
                     <button class="submitButton" id="submitBtn2">Sing in</button>
 
                 </div></center>
@@ -265,8 +280,8 @@ setInterval(AddLastMsg,1000);
                         while($row = mysqli_fetch_assoc($result)) : 
                         ?>
 
-                            <div style="margin-left:5%" >
-                                <span style="color:#34b1eb"><?=$row['name']?></span>
+                            <div style="margin-left:5%; font-family: Verdana; height: 14%;" >
+                                <span style="color:#34b1eb; "><?=$row['name']?></span>
                                 <p style="color:black"><?=$row['message']?></p>
                             </div>
                             <hr>
@@ -279,7 +294,7 @@ setInterval(AddLastMsg,1000);
                 
 	                <div id="chatSending" >
 		                <div class="sendMessage " >
-		                    <input type="text" class="sendMessageInput" placeholder="Sync your message" id="yourMessage">
+		                    <input type="text" class="sendMessageInput" placeholder="Sync your message" id="yourMessage" onkeydown="SendComment(event)">
 		                </div>
 		                	<input class="send" type="button" id="done" value="Send a message" >
 	            	</div>

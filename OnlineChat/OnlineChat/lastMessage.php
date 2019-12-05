@@ -11,7 +11,7 @@
 	if($count>=1)
 	{
       
-      	    echo "<div style=\"margin-left:5%\" class=\"slide-left\">
+      	    echo "<div style=\"margin-left:5%;font-family: Verdana; height: 14%;\" class=\"slide-left\">
 	                                <div style=\"color:#34b1eb\">";
 	                                echo $row['name'];
 	                                echo "</div>
@@ -23,6 +23,9 @@
 
 	        $queryy="UPDATE `messages` SET `drowed` = 'y' WHERE `drowed` = 'n' ";
 			$conn->query($queryy);
+}
+else{
+	echo "Fail";
 }
 
 
