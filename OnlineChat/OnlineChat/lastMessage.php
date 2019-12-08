@@ -10,9 +10,10 @@
 
 	if($count>=1)
 	{
-      
-      	    echo "<div style=\"margin-left:5%;font-family: Verdana; height: 14%;\" class=\"slide-left\">
-	                                <div style=\"color:#34b1eb\">";
+      		
+      	    echo "<div style=\"margin-left:5%;font-family: Verdana; height: 14%;\" class=\"slide-left\">";
+      	    						echo "<img style=\"float:left; width:10%;\" src=\"".$row['photo']."\">";
+	                                echo "<div style=\"color:#34b1eb\">";
 	                                echo $row['name'];
 	                                echo "</div>
 	                                <p style=\"color:black\">";

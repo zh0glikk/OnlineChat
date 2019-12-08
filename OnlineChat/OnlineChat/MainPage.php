@@ -21,7 +21,7 @@
             var xhr = $.ajax({
                 url: "registration.php", 
                 type: "POST",           
-                data: ({username: $("#loginReg").val(), password: $("#passInput").val() }), 
+                data: ({username: $("#loginReg").val(), password: $("#passInput").val(), photo: $("#photoSelect").val() }), 
                 dataType: "html",   
                 beforeSend: function () {
                                 var estr = document.getElementById("loginReg");
@@ -75,7 +75,7 @@
                               alert("Wrong login or password!");  
                     else
                     {
-                                // alert("Hello");
+
                                 document.getElementById("chat_nameId").textContent=data;
                                 ChangeBtn();
                                 HideBtn();
@@ -198,8 +198,13 @@ function SendComment(e) {
 function SignInEnter(e) {
     e = e || window.event;
     if (e.keyCode == 13) {
-        // document.getElementById("done").click();
         document.getElementById("submitBtn2").click();
+    };
+};
+function RegistartionEnter(e){
+    e = e || window.event;
+    if (e.keyCode == 13) {
+        document.getElementById("submitBtn1").click();
     };
 };
 
@@ -217,6 +222,7 @@ function SignInEnter(e) {
             <div class="header_rp" id="header_rp">
                 <label><input type="checkbox" id="rightLogoid" onchange="ChangeTheme()"><img class="header_img" id="rightLogo" src="Img/sph.png"  /></label>
                 <div class="chat_name" id="chat_nameId"></div>
+                <img id="avatar">
             </div>
 
             <h1 class="header_name"></h1>
@@ -255,12 +261,23 @@ function SignInEnter(e) {
                 
                 <center><div class="registrationField stretchRight" id="registrationField">
                     <h1 class="registration" id="registration">REGISTRATION</h1>
-                    <!-- <form> -->
+                   
 	                    <input class="Belyash" type="text" placeholder="Login" id="loginReg" name="login" required pattern="[A-Za-zА-Яа-яЁё]+$"></br></br>
 
-	                    <input class="Belyash" type="password" placeholder="Password" id="passInput" name="password" required></br></br>
+	                    <input class="Belyash" onkeydown="RegistartionEnter(event)" type="password" placeholder="Password" id="passInput" name="password"  required></br></br>
 	                    	<label><input type="checkbox" class="checkboxSharingan1 sharingan" id="sharingan" name="" onchange="ChangeSharingan()">
 	                    		<img src="Img/sharinganoff.png" class="sharImg" id="sharImg1"></label>
+
+                                <select class="photoSelect" id="photoSelect" >
+                                    <option value="Img/avatars/avatar1.png">avatar1</option>
+                                    <option value="Img/avatars/avatar2.png">avatar2</option>
+                                    <option value="Img/avatars/avatar3.png">avatar3</option>
+                                    <option value="Img/avatars/avatar4.png">avatar4</option>
+                                </select>
+                            </br>
+                            </br>
+
+                       
 
 	                    <button class="submitButton" id="submitBtn1" >Submit</button>
                 </div></center>
@@ -281,6 +298,7 @@ function SignInEnter(e) {
                         ?>
 
                             <div style="margin-left:5%; font-family: Verdana; height: 14%;" >
+                                <img style="float:left; width:10%;" src="<?=$row['photo']?>">
                                 <span style="color:#34b1eb; "><?=$row['name']?></span>
                                 <p style="color:black"><?=$row['message']?></p>
                             </div>

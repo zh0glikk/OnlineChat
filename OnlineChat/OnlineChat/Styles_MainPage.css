@@ -312,6 +312,12 @@ button{
     border: 1px solid red;
 }
 
+
+.photoSelect{
+    width: 20%;
+    height: 8%;
+}
+
 .registration{
     font-family: CrazyFont;
     font-size: 40px; 
