@@ -2,32 +2,31 @@
 	session_start();
 	include 'connection.php';
 
+	$idmax="SELECT * FROM messages ORDER BY id DESC LIMIT 1";
+	$resultt=$conn->query($idmax);
+	$roww = mysqli_fetch_assoc($resultt);
 
-	$query = "SELECT * FROM  `messages`  WHERE `drowed` = 'n' ";
-	$result=$conn->query($query);
-	$count=mysqli_num_rows($result)	;
-	$row = mysqli_fetch_assoc($result);
+      		if($_SESSION['id']<$roww['id'])
+      		{
+      			$_SESSION['id']=$roww['id'];
+		      	    echo "<div style=\"margin-left:5%;font-family: Verdana; height: 14%;\" class=\"slide-left\">";
+		      	    						echo "<img style=\"float:left; width:10%;margin-left:-3%\" src=\"".$roww['photo']."\">";
+			                                echo "<span style=\"color:#34b1eb;margin-left:3%\">";
+			                                echo $roww['name'];
+			                                echo "</span>
+			                                <p></p><span style=\"color:black;margin-left:3%\">";
+			                                echo $roww['message'];
+			                                echo "</span>
+			                            </div>
+			                            <hr>";
 
-	if($count>=1)
-	{
-      		
-      	    echo "<div style=\"margin-left:5%;font-family: Verdana; height: 14%;\" class=\"slide-left\">";
-      	    						echo "<img style=\"float:left; width:10%;\" src=\"".$row['photo']."\">";
-	                                echo "<div style=\"color:#34b1eb\">";
-	                                echo $row['name'];
-	                                echo "</div>
-	                                <p style=\"color:black\">";
-	                                echo $row['message'];
-	                                echo "</p>
-	                            </div>
-	                            <hr>";
+		        $queryy="UPDATE `messages` SET `drowed` = 'y' WHERE `drowed` = 'n' ";
+				$conn->query($queryy);
+			}
 
-	        $queryy="UPDATE `messages` SET `drowed` = 'y' WHERE `drowed` = 'n' ";
-			$conn->query($queryy);
-}
-else{
-	echo "Fail";
-}
+			else{
+				echo "Fail";
+			}
 
 
 ?>

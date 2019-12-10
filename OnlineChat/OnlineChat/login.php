@@ -10,6 +10,12 @@
 	$isOnline=$_POST['online'];
 	$_SESSION['username'] = $username;
 
+	$idmax="SELECT * FROM messages ORDER BY id DESC LIMIT 1";
+	$resultе=$conn->query($idmax);
+	$row = mysqli_fetch_assoc($resultе);
+
+	$_SESSION['id']=$row['id'];
+
 
 
 

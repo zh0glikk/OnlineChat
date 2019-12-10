@@ -298,9 +298,10 @@ function RegistartionEnter(e){
                         ?>
 
                             <div style="margin-left:5%; font-family: Verdana; height: 14%;" >
-                                <img style="float:left; width:10%;" src="<?=$row['photo']?>">
-                                <span style="color:#34b1eb; "><?=$row['name']?></span>
-                                <p style="color:black"><?=$row['message']?></p>
+                                <img style="float:left; width:10%;margin-left:-3%;" src="<?=$row['photo']?>">
+                                <span style="color:#34b1eb;margin-left:3% "><?=$row['name']?></span>
+                                <p></p>
+                                <span style="margin-left:3% ;color:black;"><?=$row['message']?></span>
                             </div>
                             <hr>
 
